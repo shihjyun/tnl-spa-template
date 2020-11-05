@@ -1,0 +1,39 @@
+@tailwind base;
+/* general setting */
+body {
+  font-family: 'Helvetica', 'Arial', 'Noto Sans TC', '黑體-繁', '微軟正黑體',
+    sans-serif;
+}
+h1 {
+  @apply text-3xl font-semibold leading-normal tracking-wider text-gray-900;
+}
+h2 {
+  @apply text-2xl font-medium leading-normal tracking-wide;
+  color: #4d4d4d;
+}
+p {
+  @apply whitespace-normal tracking-wide;
+  color: #4d4d4d;
+}
+/* layout setting */
+.main-grid-template {
+  @apply grid grid-cols-12 gap-x-4 grid-flow-row;
+  margin: 0 auto;
+}
+.grid-full-cols {
+  @apply col-start-1 col-end-13;
+}
+/* generally components setting */
+.nav-white {
+  @apply flex justify-between bg-white py-2 px-2 shadow;
+}
+.footer-dark {
+  @apply text-center p-8 text-white font-light tracking-wide bg-black;
+}
+/* hover setting */
+.hover-change-opacity:hover {
+  opacity: 0.5;
+}
+
+@tailwind components;
+@tailwind utilities;

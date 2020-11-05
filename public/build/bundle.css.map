@@ -1,0 +1,14 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "CreatorList.svelte",
+    "NavBar.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n  export let items = [\n    {\n      work: '文字內容',\n      name: ['林宜萱、羅元祺<br/>Nicholas Haggerty<br/>Daphne K. Lee'],\n    },\n    {\n      work: '網頁設計',\n      name: ['林奕甫、高嘉宏<br/>黃彥翔、楊時鈞'],\n    },\n    {\n      work: '網頁工程',\n      name: ['楊時鈞'],\n    },\n    {\n      work: '影音製作',\n      name: ['李漢威、高丞澔<br/>鄭宇軒'],\n    },\n    {\n      work: '共同監製',\n      name: ['翁世航、黃筱歡<br/>楊士範'],\n    },\n  ]\n</script>\n\n<style>\n  .creator-grid {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    grid-column-gap: 20px;\n    justify-items: center;\n  }\n</style>\n\n<div class=\"text-center text-white font-light pb-6\">\n  <h2 class=\"text-white font-light pt-6 pb-3\">製作團隊</h2>\n  <div\n    class=\"creator-grid inline-block text-left text-sm sm:text-base px-4 content-center\">\n    {#each items as { work, name }}\n      <div class=\"col-start-1 col-end-2 ml-auto pt-1\">{work}</div>\n      <div\n        class=\"col-start-2 col-end-3 mr-auto pt-1\"\n        style=\"word-break: keep-all;\">\n        {@html name}\n      </div>\n    {/each}\n  </div>\n  <span class=\"block text-sm sm:text-base mt-3\">（姓名依筆劃排序）</span>\n</div>\n",
+    "<style>\n  img {\n    width: 220px;\n  }\n</style>\n\n<script>\n  import SocialBox from './SocialBox.svelte';\n</script>\n\n<nav class=\"nav-white\">\n  <div class=\"inline-block\">\n    <a href=\"https://www.thenewslens.com/\">\n      <figure class=\"ml-2\">\n        <img src=\"https://image3.thenewslens.com/assets/web/publisher-photo-1.png\" alt=\"Tne News Lens logo\" />\n      </figure>\n    </a>\n  </div>\n  <div class=\"inline-block\">\n    <SocialBox shareUrl=\"https://www.thenewslens.com/interactive/142038\" tnlPageId=\"142038\" iconColor=\"#807F80\" />\n  </div>\n</nav>\n"
+  ],
+  "names": [],
+  "mappings": "AA0BE,aAAa,cAAC,CAAC,AACb,OAAO,CAAE,IAAI,CACb,qBAAqB,CAAE,GAAG,CAAC,GAAG,CAC9B,eAAe,CAAE,IAAI,CACrB,aAAa,CAAE,MAAM,AACvB,CAAC;AC9BD,GAAG,cAAC,CAAC,AACH,KAAK,CAAE,KAAK,AACd,CAAC"
+}
