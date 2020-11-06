@@ -1,19 +1,3 @@
-<script>
-  export let projectName
-  export let tnlLanguage = 'tw'
-
-  const articleListsUrl =
-    'https://datastore.thenewslens.com/infographic/article-lists/' +
-    projectName +
-    '.json?' +
-    `${Math.round(Math.random() * 100000)}`
-
-  const articleData = (async () => {
-    const response = await fetch(articleListsUrl)
-    return await response.json()
-  })()
-</script>
-
 <style>
   #article-img {
     width: 45%;
@@ -25,15 +9,27 @@
   }
 </style>
 
-<div class="pt-10 sm:pt-20 pb-3 sm:pb-6 mx-auto" id="article-img">
-  <img
-    src="https://datastore.thenewslens.com/infographic/us-election-2020/images-tw/read-more.png?{Math.round(Math.random() * 100000)}"
-    alt="read-more" />
-</div>
+<script>
+  import Spinner from './Spinner.svelte';
+  export let projectName = '';
+  export let tnlLanguage = 'tw';
+
+  const articleListsUrl =
+    'https://datastore.thenewslens.com/infographic/article-lists/' + projectName + '.json?' + `${Date.now()}`;
+
+  const articleData = (async () => {
+    const response = await fetch(articleListsUrl);
+    return await response.json();
+  })();
+</script>
+
+<slot />
 
 <div class="article-list-grid-template pb-20">
   {#await articleData}
-    <p class="text-center">Loading ...</p>
+    <div class="w-64 h-64">
+      <Spinner />
+    </div>
   {:then articleData}
     {#each articleData.slice(0, 6) as { articletitle, articledate, articleimage, articleid }}
       <div class="my-4 shadow">
@@ -41,18 +37,17 @@
           <a
             href={`https://www.thenewslens.com/${articleid}?utm_source=TNL-interactive&utm_medium=article-zone&utm_campaign=${projectName}`}
             target="_blank"
-            rel="noopener noreferrer">
-            <img
-              class="article-lists-img hover:scale-110"
-              src={articleimage}
-              alt="" />
+            rel="noopener noreferrer"
+          >
+            <img class="article-lists-img hover:scale-110" src={articleimage} alt="" />
           </a>
         </div>
         <span class="article-lists-date">{articledate}</span>
         <a
           href={`https://www.thenewslens.com/${articleid}?utm_source=TNL-interactive&utm_medium=article-zone&utm_campaign=${projectName}`}
           target="_blank"
-          rel="noopener noreferrer">
+          rel="noopener noreferrer"
+        >
           <h3 class="article-lists-h3 hover:text-blue-800">{articletitle}</h3>
         </a>
       </div>

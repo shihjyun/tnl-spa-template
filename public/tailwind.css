@@ -4,35 +4,85 @@ body {
   font-family: 'Helvetica', 'Arial', 'Noto Sans TC', '黑體-繁', '微軟正黑體',
     sans-serif;
 }
+
 h1 {
   @apply text-3xl font-semibold leading-normal tracking-wider text-gray-900;
 }
 h2 {
-  @apply text-2xl font-medium leading-normal tracking-wide;
+  @apply text-2xl font-medium leading-normal tracking-widest;
   color: #4d4d4d;
 }
-p {
-  @apply whitespace-normal tracking-wide;
+
+/* basic paragraph container */
+.basic-p-container > p {
+  @apply text-justify whitespace-normal tracking-wide leading-7 text-base pb-6 px-4 mx-auto;
   color: #4d4d4d;
+  max-width: 560px;
 }
+
+.basic-p-container > h3 {
+  @apply text-xl font-semibold leading-normal tracking-wider pt-10 pb-4 px-4 mx-auto;
+  color: #4d4d4d;
+  max-width: 560px;
+}
+
+.basic-p-container > .img-wrapper {
+  @apply pb-6 ;
+  max-width: 100vw;
+}
+
+.basic-p-container > .img-wrapper > img {
+  @apply w-full mx-auto pb-6;
+}
+
+
+
 /* layout setting */
 .main-grid-template {
-  @apply grid grid-cols-12 gap-x-4 grid-flow-row;
+  @apply grid grid-cols-12 gap-x-4 justify-items-center grid-flow-row;
   margin: 0 auto;
 }
 .grid-full-cols {
-  @apply col-start-1 col-end-13;
+  grid-column: 1/13;
 }
+
+/* article list setting */
+.article-list-grid-template {
+  @apply grid grid-flow-row justify-center w-full gap-4 mx-auto;
+  grid-template-columns: repeat(auto-fit, 240px);
+  max-width: 800px;
+  
+}
+.article-lists-img {
+  @apply w-full transition duration-300 transform;
+}
+.article-lists-date {
+  @apply pt-2 px-4 block text-sm;
+}
+.article-lists-h3 {
+  @apply pt-1 pb-4 px-4 tracking-normal font-normal text-base text-left;
+}
+
 /* generally components setting */
-.nav-white {
-  @apply flex justify-between bg-white py-2 px-2 shadow;
-}
-.footer-dark {
-  @apply text-center p-8 text-white font-light tracking-wide bg-black;
-}
+
+
+
 /* hover setting */
-.hover-change-opacity:hover {
+.hover-opacity:hover {
   opacity: 0.5;
+}
+
+@screen sm{
+  /* basic paragraph container */
+  .basic-p-container > p {
+    @apply text-lg leading-9;
+  }
+  .basic-p-container > h3 {
+    @apply text-2xl;
+  }
+  .basic-p-container > .img-wrapper > img {
+    max-width: 650px;
+  }
 }
 
 @tailwind components;
