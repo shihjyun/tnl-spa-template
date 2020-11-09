@@ -1,12 +1,26 @@
 <style>
   figcaption {
+    margin: 0 10px;
+    font-size: 12px;
     letter-spacing: 0.05em;
-    margin: 0 auto;
-    padding: 0 7px 7px 7px;
+    padding: 0 0 3px 0;
     color: #777;
     line-height: 1.5rem;
     max-width: 650px;
     border-bottom: dashed 1px #ccc;
+  }
+
+  @media (min-width: 640px) {
+    figcaption {
+      font-size: 16px;
+      letter-spacing: 0.05em;
+      margin: 0 auto;
+      padding: 0 7px 7px 7px;
+      color: #777;
+      line-height: 1.5rem;
+      max-width: 650px;
+      border-bottom: dashed 1px #ccc;
+    }
   }
 </style>
 

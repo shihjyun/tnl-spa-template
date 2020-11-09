@@ -32,7 +32,7 @@ h2 {
 }
 
 .basic-p-container > .img-wrapper > img {
-  @apply w-full mx-auto pb-6;
+  @apply w-full mx-auto pb-3;
 }
 
 
@@ -81,6 +81,7 @@ h2 {
     @apply text-2xl;
   }
   .basic-p-container > .img-wrapper > img {
+    @apply pb-6;
     max-width: 650px;
   }
 }

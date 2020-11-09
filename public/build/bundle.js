@@ -1401,7 +1401,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (29:2) {#if $ContentDataStore}
+    // (43:2) {#if $ContentDataStore}
     function create_if_block$1(ctx) {
     	let each_1_anchor;
     	let each_value = /*basicPragraphsData*/ ctx[0];
@@ -1462,14 +1462,14 @@ var app = (function () {
     		block,
     		id: create_if_block$1.name,
     		type: "if",
-    		source: "(29:2) {#if $ContentDataStore}",
+    		source: "(43:2) {#if $ContentDataStore}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (35:33) 
+    // (49:33) 
     function create_if_block_3(ctx) {
     	let figure;
     	let img;
@@ -1491,11 +1491,11 @@ var app = (function () {
     			t2 = space();
     			if (img.src !== (img_src_value = /*value*/ ctx[4].url)) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", img_alt_value = /*value*/ ctx[4].discription);
-    			add_location(img, file$3, 36, 10, 914);
-    			attr_dev(figcaption, "class", "svelte-wfrc0b");
-    			add_location(figcaption, file$3, 37, 10, 972);
+    			add_location(img, file$3, 50, 10, 1202);
+    			attr_dev(figcaption, "class", "svelte-18blbr1");
+    			add_location(figcaption, file$3, 51, 10, 1260);
     			attr_dev(figure, "class", "img-wrapper");
-    			add_location(figure, file$3, 35, 8, 875);
+    			add_location(figure, file$3, 49, 8, 1163);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, figure, anchor);
@@ -1525,14 +1525,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(35:33) ",
+    		source: "(49:33) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (33:36) 
+    // (47:36) 
     function create_if_block_2(ctx) {
     	let h3;
     	let t_value = /*value*/ ctx[4] + "";
@@ -1542,7 +1542,7 @@ var app = (function () {
     		c: function create() {
     			h3 = element("h3");
     			t = text(t_value);
-    			add_location(h3, file$3, 33, 8, 816);
+    			add_location(h3, file$3, 47, 8, 1104);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h3, anchor);
@@ -1560,14 +1560,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(33:36) ",
+    		source: "(47:36) ",
     		ctx
     	});
 
     	return block;
     }
 
-    // (31:6) {#if type === 'text'}
+    // (45:6) {#if type === 'text'}
     function create_if_block_1(ctx) {
     	let p;
     	let t_value = /*value*/ ctx[4] + "";
@@ -1577,7 +1577,7 @@ var app = (function () {
     		c: function create() {
     			p = element("p");
     			t = text(t_value);
-    			add_location(p, file$3, 31, 8, 756);
+    			add_location(p, file$3, 45, 8, 1044);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, p, anchor);
@@ -1595,14 +1595,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(31:6) {#if type === 'text'}",
+    		source: "(45:6) {#if type === 'text'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (30:4) {#each basicPragraphsData as { type, value }}
+    // (44:4) {#each basicPragraphsData as { type, value }}
     function create_each_block(ctx) {
     	let if_block_anchor;
 
@@ -1650,7 +1650,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(30:4) {#each basicPragraphsData as { type, value }}",
+    		source: "(44:4) {#each basicPragraphsData as { type, value }}",
     		ctx
     	});
 
@@ -1666,7 +1666,7 @@ var app = (function () {
     			div = element("div");
     			if (if_block) if_block.c();
     			attr_dev(div, "class", "basic-p-container");
-    			add_location(div, file$3, 26, 0, 554);
+    			add_location(div, file$3, 40, 0, 842);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
