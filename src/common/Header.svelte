@@ -5,15 +5,12 @@
 </style>
 
 <script>
-  import SocialBox from './SocialBox.svelte';
-
-  export let homePageUrl = 'https://www.thenewslens.com/';
-  export let shareUrl = '#';
-  export let tnlDomainPageId = '#';
-  export let socialIconColor = '#807F80';
+  import SocialBox from './SocialBox.svelte'
+  export let homePageUrl = 'https://www.thenewslens.com/'
+  export let socialIconColor = '#807F80'
 </script>
 
-<header class="flex justify-between bg-white py-2 px-2 shadow">
+<header class="relative flex justify-between bg-white py-2 px-2 shadow z-10">
   <div class="inline-block">
     <a href={homePageUrl}>
       <figure class="ml-2">
@@ -22,6 +19,7 @@
     </a>
   </div>
   <div class="inline-block">
-    <SocialBox {shareUrl} {tnlDomainPageId} {socialIconColor} />
+    <SocialBox {socialIconColor} />
   </div>
 </header>
+

@@ -25,16 +25,16 @@
 </style>
 
 <script>
-  import ContentDataStore from '../stores/ContentDataStore.js';
+  import ContentDataStore from '../stores/ContentDataStore.js'
 
   // the object name this section need to query
-  export let sectionName = 'testing';
+  export let sectionName = 'testing'
 
-  let basicPragraphsData;
+  let basicPragraphsData
 
   // check store has fetched content data from GCS
   $: if ($ContentDataStore) {
-    basicPragraphsData = $ContentDataStore[sectionName];
+    basicPragraphsData = $ContentDataStore[sectionName]
   }
 </script>
 
@@ -49,7 +49,9 @@
       {:else if type === 'image'}
         <figure class="img-wrapper">
           <img src={value.url} alt={value.discription} />
-          <figcaption>{value.note}</figcaption>
+          {#if value.note}
+            <figcaption>{value.note}</figcaption>
+          {/if}
         </figure>
       {/if}
     {/each}

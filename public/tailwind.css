@@ -6,7 +6,7 @@ body {
 }
 
 h1 {
-  @apply text-3xl font-semibold leading-normal tracking-wider text-gray-900;
+  @apply text-xl sm:text-3xl font-semibold leading-normal tracking-wider text-gray-900;
 }
 h2 {
   @apply text-2xl font-medium leading-normal tracking-widest;
@@ -36,7 +36,6 @@ h2 {
 }
 
 
-
 /* layout setting */
 .main-grid-template {
   @apply grid grid-cols-12 gap-x-4 justify-items-center grid-flow-row;
@@ -49,9 +48,8 @@ h2 {
 /* article list setting */
 .article-list-grid-template {
   @apply grid grid-flow-row justify-center w-full gap-4 mx-auto;
-  grid-template-columns: repeat(auto-fit, 240px);
-  max-width: 800px;
-  
+  grid-template-columns: repeat(auto-fit, 260px);
+  max-width: 900px;
 }
 .article-lists-img {
   @apply w-full transition duration-300 transform;
@@ -60,10 +58,10 @@ h2 {
   @apply pt-2 px-4 block text-sm;
 }
 .article-lists-h3 {
-  @apply pt-1 pb-4 px-4 tracking-normal font-normal text-base text-left;
+  @apply tracking-normal text-lg text-left py-3;
 }
 
-/* generally components setting */
+
 
 
 
@@ -82,7 +80,7 @@ h2 {
   }
   .basic-p-container > .img-wrapper > img {
     @apply pb-6;
-    max-width: 650px;
+    max-width: 560px;
   }
 }
 

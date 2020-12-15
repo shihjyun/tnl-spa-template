@@ -1,12 +1,12 @@
-import {writable} from 'svelte/store';
+import {writable} from 'svelte/store'
 
-const contentDataUrl = 'https://datastore.thenewslens.com/infographic/test/test.json?sffdf'
+const contentDataUrl = `https://datastore.thenewslens.com/infographic/house-price-2020/house-price-2020.json?${Date.now()}`
 
 const ContentDataStore = writable(undefined, async set => {
-  const res = await fetch(contentDataUrl);
-  const data = await res.json();
-  set(data);
-  return () => {};
-});
+  const res = await fetch(contentDataUrl)
+  const data = await res.json()
+  set(data)
+  return () => {}
+})
 
 export default ContentDataStore

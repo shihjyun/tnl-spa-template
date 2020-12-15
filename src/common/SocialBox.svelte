@@ -1,22 +1,22 @@
 <script>
-  import { onMount } from 'svelte';
-  import { isMobile } from '../stores/DeviceDetectorStore.js';
-  export let shareUrl;
-  export let tnlDomainPageId;
-  export let socialIconColor = '#484748';
+  import { onMount } from 'svelte'
+  import { isMobile } from '../stores/DeviceDetectorStore.js'
+  export let socialIconColor = '#484748'
 
-  let webShareIcon;
+  let webShareIcon
+  let shareUrl = 'https://www.thenewslens.com/interactive/144635'
+  let tnlDomainPageId = 144635
 
   // detect if user is using facebook in-app browser
   function isFacebookApp() {
-    var ua = navigator.userAgent || navigator.vendor || window.opera;
-    return ua.indexOf('FBAN') > -1 || ua.indexOf('FBAV') > -1;
+    var ua = navigator.userAgent || navigator.vendor || window.opera
+    return ua.indexOf('FBAN') > -1 || ua.indexOf('FBAV') > -1
   }
 
   onMount(() => {
     // if user is on mobile device add event listener to 'mobile-share-icon' element
     if ($isMobile && !isFacebookApp()) {
-      webShareIcon = document.getElementById('mobile-share-icon');
+      webShareIcon = document.getElementById('mobile-share-icon')
       webShareIcon.addEventListener('click', async () => {
         if (navigator.share) {
           navigator
@@ -24,11 +24,11 @@
               url: tnlDomainPageId,
             })
             .then(() => console.log('successful share!'))
-            .catch((error) => console.log('error sharing!', error));
+            .catch((error) => console.log('error sharing!', error))
         }
-      });
+      })
     }
-  });
+  })
 </script>
 
 {#if $isMobile && !isFacebookApp()}
