@@ -9,6 +9,10 @@
     "serve": "serve public -p 80",
     "dev": "concurrently \"rollup -c -w\" \"npm run watch:tailwind\""
   },
+  "bin": {
+    "upload-build-files-to-GCS": "./tnl-kit/buildFileUploader.js",
+    "upload-files-to-GCS": "./tnl-kit/fileUploader.js"
+  },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
